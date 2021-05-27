@@ -33,49 +33,48 @@ class _HomePageState extends State<HomePage> {
       ),
     );
 
-    return SingleChildScrollView(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Buy Tarkari"),
-          backgroundColor: Colors.blueAccent,
-          actions: <Widget>[
-            IconButton(
-                icon: Icon(
-                  Icons.search,
-                  color: Colors.white,
-                ),
-                onPressed: null),
-            IconButton(
-                icon: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.white,
-                ),
-                onPressed: null)
-          ],
-        ),
-        drawer: Drawer(
-          child: Column(
-            children: <Widget>[
-              ListTile(
-                title: Text(
-                  'Filter',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                ),
-                //leading: Icon(
-                //Icons.person,
-                //color: Colors.blueAccent,
-                //),
-                //onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                // },
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Buy Tarkari"),
+        backgroundColor: Colors.blueAccent,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.search,
+                color: Colors.white,
               ),
-              /*        ListTile(
+              onPressed: null),
+          IconButton(
+              icon: Icon(
+                Icons.shopping_cart,
+                color: Colors.white,
+              ),
+              onPressed: null)
+        ],
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+              title: Text(
+                'Filter',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+              //leading: Icon(
+              //Icons.person,
+              //color: Colors.blueAccent,
+              //),
+              //onTap: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              // },
+            ),
+            /*        ListTile(
               title: DropdownButton<Item>(
                 hint: Text("Select item"),
                 value: selectedUser,
@@ -105,37 +104,41 @@ class _HomePageState extends State<HomePage> {
               leading: Text('SORT BY'),
             ),
            */
-              //    Icon(
-              //   Icons.person,
-              // color: Colors.blueAccent,
-              //  ),
-              // onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              //   },
+            //    Icon(
+            //   Icons.person,
+            // color: Colors.blueAccent,
+            //  ),
+            // onTap: () {
+            // Update the state of the app
+            // ...
+            // Then close the drawer
+            //   },
 
-              ListTile(title: TextField(), leading: Text('SEARCH')),
-              ListTile(title: TextField(), leading: Text('BRAND')),
-              ListTile(
-                title: Text('Logout'),
-                leading: Icon(
-                  Icons.note,
-                  color: Colors.blueAccent,
-                ),
-                onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                },
+            ListTile(title: TextField(), leading: Text('SEARCH')),
+            ListTile(title: TextField(), leading: Text('BRAND')),
+            ListTile(
+              title: Text('Logout'),
+              leading: Icon(
+                Icons.note,
+                color: Colors.blueAccent,
               ),
-            ],
-          ),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+              },
+            ),
+          ],
         ),
-        body: new ListView(
+      ),
+      body: Card(
+        // child: Expanded(
+        child: ListView(
+          scrollDirection: Axis.vertical,
           children: <Widget>[
             //image_carousel
             image_carousel,
+
             Padding(
               padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
               child: Text(
@@ -145,6 +148,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+
             HorizontalList(),
             Padding(
               padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
@@ -155,8 +159,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Product(),
-
             // Product(),
           ],
         ),

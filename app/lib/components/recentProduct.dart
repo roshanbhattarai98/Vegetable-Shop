@@ -53,6 +53,7 @@ class _ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+        scrollDirection: Axis.vertical,
         itemCount: product_list.length,
         gridDelegate:
             new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
@@ -94,45 +95,50 @@ class Single_prod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: GridTile(
-        footer: Container(
-          height: 60,
-          color: Colors.white38,
-          child: ListTile(
-              leading: Text(
-                prod_name,
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              subtitle: Text(
-                "\$$prod_old_price",
-                style: TextStyle(decoration: TextDecoration.lineThrough),
-              ),
-              title: Text(
-                "\$$prod_price",
-                style: TextStyle(fontSize: 15),
-              ),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                      //passing value of product details
-                      builder: (context) => Roshan(
-                            product_details_name: prod_name,
-                            product_details_picture: prod_picture,
-                            product_details_old_price: prod_old_price,
-                            product_details_price: prod_price,
-                            product_details_Camera: prod_Camera,
-                            product_details_RAM: prod_RAM,
-                            product_details_Storage: prod_Storage,
-                            product_details_brand: prod_brand,
-                          )),
-                );
-              }),
+      child: Expanded(
+        child: SizedBox(
+          height: 300,
+          child: GridTile(
+            footer: Container(
+              height: 60,
+              color: Colors.white38,
+              child: ListTile(
+                  leading: Text(
+                    prod_name,
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  subtitle: Text(
+                    "\$$prod_old_price",
+                    style: TextStyle(decoration: TextDecoration.lineThrough),
+                  ),
+                  title: Text(
+                    "\$$prod_price",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          //passing value of product details
+                          builder: (context) => Roshan(
+                                product_details_name: prod_name,
+                                product_details_picture: prod_picture,
+                                product_details_old_price: prod_old_price,
+                                product_details_price: prod_price,
+                                product_details_Camera: prod_Camera,
+                                product_details_RAM: prod_RAM,
+                                product_details_Storage: prod_Storage,
+                                product_details_brand: prod_brand,
+                              )),
+                    );
+                  }),
+            ),
+            child: Image.asset(prod_picture, fit: BoxFit.cover),
+          ),
         ),
-        child: Image.asset(prod_picture, fit: BoxFit.cover),
       ),
     );
   }
