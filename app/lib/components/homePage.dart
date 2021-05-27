@@ -132,35 +132,37 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Card(
-        // child: Expanded(
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: <Widget>[
-            //image_carousel
-            image_carousel,
+        child: Container(
+          height: 1000,
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            children: <Widget>[
+              //image_carousel
+              image_carousel,
 
-            Padding(
-              padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
-              child: Text(
-                "Categories",
-                style: TextStyle(
-                  fontSize: 20,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                child: Text(
+                  "Categories",
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
               ),
-            ),
 
-            HorizontalList(),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
-              child: Text(
-                "Recent Products",
-                style: TextStyle(
-                  fontSize: 20,
+              HorizontalList(),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(35, 15, 15, 0),
+                child: Text(
+                  "Recent Products",
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
               ),
-            ),
-            // Product(),
-          ],
+              Product(),
+            ],
+          ),
         ),
       ),
     );
