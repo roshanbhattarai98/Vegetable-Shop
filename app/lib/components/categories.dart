@@ -4,7 +4,9 @@ class HorizontalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 35,
+      //  height: MediaQuery.of(context).size.height,
+      width: double.infinity,
+      height: 55,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[

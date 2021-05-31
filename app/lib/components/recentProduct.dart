@@ -9,40 +9,40 @@ class Product extends StatefulWidget {
 class _ProductState extends State<Product> {
   var product_list = [
     {
-      "name": "Mobile",
-      "picture": "images/vegetable1.jpg",
-      "old_price": 2000,
-      "price": 1500,
+      "name": "Vegetable1",
+      "picture": "",
+      "old_price": 200,
+      "price": 150,
       "brand": "Samsung",
       "Camera": "24MP",
       "RAM": "4GB",
       "Storage": "64GB",
     },
     {
-      "name": "Laptop",
-      "picture": "images/vegetable.jpg",
-      "old_price": 2000,
-      "price": 1500,
+      "name": "Vegetable2",
+      "picture": "",
+      "old_price": 200,
+      "price": 150,
       "brand": "DELL-i3, 10th gen",
       "Camera": "4MP",
       "RAM": "4GB",
       "Storage": "128GB SSD",
     },
     {
-      "name": "Mobile",
-      "picture": "images/vegetable.jpg",
-      "old_price": 2000,
-      "price": 1500,
+      "name": "Vegetable3",
+      "picture": "",
+      "old_price": 200,
+      "price": 150,
       "brand": "Samsung",
       "Camera": "24MP",
       "RAM": "4GB",
       "Storage": "64GB",
     },
     {
-      "name": "Laptop",
-      "picture": "images/vegetable.jpg",
-      "old_price": 2000,
-      "price": 1500,
+      "name": "Vegetable4",
+      "picture": "",
+      "old_price": 200,
+      "price": 150,
       "brand": "DELL-i3, 10th gen",
       "Camera": "4MP",
       "RAM": "4GB",
@@ -53,6 +53,9 @@ class _ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 250,
+      // height: MediaQuery.of(context).size.height,
+      width: double.infinity,
       child: GridView.builder(
           shrinkWrap: true,
           scrollDirection: Axis.vertical,
@@ -117,11 +120,11 @@ class Single_prod extends StatelessWidget {
                       ),
                     ),
                     subtitle: Text(
-                      "\$$prod_old_price",
+                      "\Rs$prod_old_price",
                       style: TextStyle(decoration: TextDecoration.lineThrough),
                     ),
                     title: Text(
-                      "\$$prod_price",
+                      "\Rs$prod_price",
                       style: TextStyle(fontSize: 15),
                     ),
                     onTap: () {

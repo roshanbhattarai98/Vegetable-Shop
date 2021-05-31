@@ -133,7 +133,9 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Card(
         child: Container(
-          height: 1000,
+          height: MediaQuery.of(context).size.height,
+          width: double.infinity,
+          //   height: 1000,
           child: ListView(
             scrollDirection: Axis.vertical,
             children: <Widget>[
@@ -141,7 +143,7 @@ class _HomePageState extends State<HomePage> {
               image_carousel,
 
               Padding(
-                padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                padding: const EdgeInsets.fromLTRB(15, 15, 15, 5),
                 child: Text(
                   "Categories",
                   style: TextStyle(
@@ -152,7 +154,7 @@ class _HomePageState extends State<HomePage> {
 
               HorizontalList(),
               Padding(
-                padding: const EdgeInsets.fromLTRB(35, 15, 15, 0),
+                padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
                 child: Text(
                   "Recent Products",
                   style: TextStyle(

@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
               Column(
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(bottom: 200.0),
+                    padding: EdgeInsets.only(bottom: 200.0, top: 60),
                     child: Text(
                       "Welcome",
                       style: TextStyle(
