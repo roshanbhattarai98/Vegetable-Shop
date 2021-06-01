@@ -26,6 +26,7 @@ class Roshan extends StatefulWidget {
 }
 
 class _RoshanState extends State<Roshan> {
+  var counter = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +42,221 @@ class _RoshanState extends State<Roshan> {
               onPressed: null)
         ],
       ),
-      body: ListView(
+      body: Container(
+        //    height: MediaQuery.of(context).size.height,
+        child: Stack(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * .5,
+              child: Image.asset(
+                widget.product_details_picture,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Container(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: MediaQuery.of(context).size.height * .5,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(.2),
+                          offset: Offset(0, -4),
+                          blurRadius: 8,
+                        )
+                      ]),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  widget.product_details_name,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 20,
+                            left: 30,
+                            right: 30,
+                          ),
+                          child: Row(
+                            children: [
+                              Text("${widget.product_details_price}"),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text("/ 1 Kg"),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    counter--;
+                                  });
+                                  //   counter--;
+                                },
+                                //    borderRadius: BorderRadius.circular(10),
+                                child: Container(
+                                  //    padding: const EdgeInsets.symmetric(
+                                  //      vertical: 10, horizontal: 30),
+                                  decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Text(
+                                    "-",
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Text(
+                                  "$counter",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    counter++;
+                                  });
+                                  // counter++;
+                                },
+                                //   borderRadius: BorderRadius.circular(10),
+                                child: Container(
+                                  //     padding: const EdgeInsets.symmetric(
+                                  //       vertical: 10, horizontal: 30),
+                                  decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Text(
+                                    "+",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        //    Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 30),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(20),
+                                  topRight: Radius.circular(20),
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.07),
+                                    offset: Offset(0, -3),
+                                    blurRadius: 12,
+                                  )
+                                ]),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Total:"),
+                                      Text(
+                                          "${widget.product_details_price * counter}"),
+                                    ],
+                                  ),
+                                ),
+                                Material(
+                                  color: Colors.green,
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: InkWell(
+                                    onTap: () {
+                                      print("Click");
+                                    },
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 10, horizontal: 30),
+                                      decoration: BoxDecoration(
+                                        color: Colors.green,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Text("Add to Cart"),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+
+                        Padding(
+                            padding: const EdgeInsets.fromLTRB(15, 5, 0, 5),
+                            child: Text(
+                              "Similar Products",
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            )),
+                        Container(
+                          height: 360,
+                          child: Similar_Product(),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      // ),
+    );
+    /*     ListView(
         children: <Widget>[
           Container(
               height: 250,
@@ -152,10 +367,10 @@ class _RoshanState extends State<Roshan> {
           Container(
             height: 360,
             child: Similar_Product(),
-          ),
-        ],
-      ),
-    );
+          ), */
+    //   ],
+    // ),
+    // );
   }
 }
 

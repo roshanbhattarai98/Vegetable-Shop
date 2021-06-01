@@ -7,7 +7,7 @@ import 'package:app/components/signUp.dart';
 import 'package:app/components/homePage.dart';
 import 'package:app/components/categories.dart';
 import 'package:app/components/recentProduct.dart';
-import 'package:app/components/productDetails.dart';
+import 'package:app/components/test.dart';
 //import 'package:app/components/background.dart';
 
 void main() {
@@ -24,10 +24,10 @@ class HomePage extends StatelessWidget {
       // backgroundColor: Colors.transparent,
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('images/vegetable1.jpg'), fit: BoxFit.fill),
-          ),
+          //    decoration: BoxDecoration(
+          //    image: DecorationImage(
+          //      image: AssetImage('images/vegetable1.jpg'), fit: BoxFit.fill),
+          // ),
           child: Column(
             // even space distribution
             //  mainAxisAlignment: MainAxisAlignment.center,

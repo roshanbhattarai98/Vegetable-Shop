@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:app/components/categories.dart';
 import 'package:app/components/recentProduct.dart';
-import 'package:app/components/productDetails.dart';
+import 'package:app/components/test.dart';
 
 //import 'package:app/components/productDetails.dart';
 

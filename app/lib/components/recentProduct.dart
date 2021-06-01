@@ -1,5 +1,6 @@
+import 'package:app/components/test.dart';
 import 'package:flutter/material.dart';
-import 'package:app/components/productDetails.dart';
+import 'package:app/components/test.dart';
 
 class Product extends StatefulWidget {
   @override
@@ -131,7 +132,7 @@ class Single_prod extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                             //passing value of product details
-                            builder: (context) => Roshan(
+                            builder: (context) => Test(
                                   product_details_name: prod_name,
                                   product_details_picture: prod_picture,
                                   product_details_old_price: prod_old_price,
