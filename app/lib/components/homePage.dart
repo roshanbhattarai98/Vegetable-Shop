@@ -1,9 +1,11 @@
 //import 'package:app/components/recentProduct.dart';
+import 'package:app/components/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:app/components/categories.dart';
 import 'package:app/components/recentProduct.dart';
 import 'package:app/components/test.dart';
+import 'package:app/components/cart.dart';
 
 //import 'package:app/components/productDetails.dart';
 
@@ -49,7 +51,11 @@ class _HomePageState extends State<HomePage> {
                 Icons.shopping_cart,
                 color: Colors.white,
               ),
-              onPressed: null)
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    //passing value of product details
+                    builder: (context) => Cart()));
+              })
         ],
       ),
       drawer: Drawer(

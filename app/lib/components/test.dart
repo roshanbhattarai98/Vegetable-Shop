@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app/components/cart.dart';
 
 class Test extends StatefulWidget {
   final product_details_name;
@@ -27,6 +28,7 @@ class Test extends StatefulWidget {
 
 class _TestState extends State<Test> {
   var counter = 2;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -217,7 +219,16 @@ class _TestState extends State<Test> {
                                     borderRadius: BorderRadius.circular(10),
                                     child: InkWell(
                                       onTap: () {
-                                        print("Click");
+                                        //  print("Click");
+
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                            //passing value of product details
+                                            builder: (context) => Cart(
+                                                //
+                                                ),
+                                          ),
+                                        );
                                       },
                                       borderRadius: BorderRadius.circular(10),
                                       child: Container(
