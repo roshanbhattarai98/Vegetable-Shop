@@ -8,6 +8,9 @@ import 'package:app/components/homePage.dart';
 import 'package:app/components/categories.dart';
 import 'package:app/components/recentProduct.dart';
 import 'package:app/components/test.dart';
+import 'package:app/components/logIn.dart';
+import 'package:app/model/login_model.dart';
+import 'package:app/api/api.dart';
 //import 'package:app/components/background.dart';
 
 void main() {
@@ -57,7 +60,7 @@ class HomePage extends StatelessWidget {
                     height: 60,
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LoginPage()));
+                          MaterialPageRoute(builder: (context) => LogIn()));
                     },
                     // defining the shape
                     shape: RoundedRectangleBorder(
