@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class LoginResponseModel {
   final String token;
   final String error;

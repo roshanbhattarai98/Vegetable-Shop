@@ -5,7 +5,7 @@ import 'package:app/model/login_model.dart';
 import 'package:flutter/material.dart';
 import 'package:app/components/homePage.dart';
 import 'package:app/components/test.dart';
-import 'package:app/api/api.dart';
+import 'package:app/api/login_api.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({Key? key}) : super(key: key);

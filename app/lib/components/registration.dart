@@ -1,3 +1,5 @@
+import 'package:app/api/registration_api.dart';
+import 'package:app/model/registration_model.dart';
 import 'package:flutter/material.dart';
 
 class Registration extends StatefulWidget {
@@ -8,6 +10,11 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
+  late Register _user;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController deviceController = TextEditingController();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -44,6 +51,7 @@ class _RegistrationState extends State<Registration> {
                 child: Column(
                   children: <Widget>[
                     TextFormField(
+                      controller: emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: new InputDecoration(
                           hintText: "Email Address",
@@ -59,6 +67,7 @@ class _RegistrationState extends State<Registration> {
                       height: 5,
                     ),
                     TextFormField(
+                      controller: nameController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: new InputDecoration(
                           hintText: "Username",
@@ -74,9 +83,26 @@ class _RegistrationState extends State<Registration> {
                       height: 5,
                     ),
                     TextFormField(
+                      controller: passwordController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: new InputDecoration(
                           hintText: "Password",
+                          contentPadding:
+                              EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          border: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey))),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    TextFormField(
+                      controller: deviceController,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: new InputDecoration(
+                          hintText: "Device",
                           contentPadding:
                               EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                           enabledBorder: OutlineInputBorder(
@@ -109,7 +135,18 @@ class _RegistrationState extends State<Registration> {
                 child: MaterialButton(
                   minWidth: double.infinity,
                   height: 60,
-                  onPressed: () {},
+                  onPressed: () async {
+                    final String name = nameController.text;
+                    final String email = nameController.text;
+                    final String password = nameController.text;
+                    final String device = nameController.text;
+
+                    final Register? user =
+                        await createUser(email, name, password, device);
+                    setState(() {
+                      _user = user!;
+                    });
+                  },
                   color: Color(0xff0095FF),
                   elevation: 0,
                   shape: RoundedRectangleBorder(
