@@ -5,10 +5,10 @@ import 'package:app/model/login_model.dart';
 
 class APIService {
   Future<LoginResponseModel> login(LogInRequestModel requestModel) async {
-    String url = "https://buytarkari.com/api/login";
+    String url = "http://buytarkari.sambatshree.com/api/login";
 
     final response = await http.post(
-        Uri.parse("https://buytarkari.com/api/login"),
+        Uri.parse("http://buytarkari.sambatshree.com/api/login"),
         body: requestModel.toJson());
     if (response.statusCode == 200 || response.statusCode == 400) {
       return LoginResponseModel.fromJson(
