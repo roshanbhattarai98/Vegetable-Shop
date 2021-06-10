@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:app/components/registration.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app/components/signIn.dart';
@@ -11,7 +12,7 @@ import 'package:app/components/test.dart';
 import 'package:app/components/logIn.dart';
 import 'package:app/model/login_model.dart';
 import 'package:app/api/api.dart';
-//import 'package:app/components/background.dart';
+import 'package:app/components/registration.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -81,7 +82,7 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => SignupPage()));
+                              builder: (context) => Registration()));
                     },
                     color: Color(0xff0095FF),
                     shape: RoundedRectangleBorder(
