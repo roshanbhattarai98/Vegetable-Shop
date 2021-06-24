@@ -2,6 +2,7 @@ import 'package:app/components/test.dart';
 import 'package:flutter/material.dart';
 import 'package:app/components/test.dart';
 import 'package:app/components/cart.dart';
+//import 'package:provider/provider.dart';
 
 class Product extends StatefulWidget {
   @override
@@ -54,6 +55,7 @@ class _ProductState extends State<Product> {
 
   @override
   Widget build(BuildContext context) {
+    //final productData=Provider.of<Products>(context);
     return Container(
       height: 250,
       // height: MediaQuery.of(context).size.height,
@@ -80,6 +82,7 @@ class _ProductState extends State<Product> {
   }
 }
 
+//class Single_prod with ChangeNotifier {
 class Single_prod extends StatelessWidget {
   final prod_name;
   final prod_picture;

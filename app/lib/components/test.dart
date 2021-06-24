@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/components/cart.dart';
+//import 'package:provider/provider.dart'
 
 class Test extends StatefulWidget {
   final product_details_name;
@@ -225,8 +226,9 @@ class _TestState extends State<Test> {
                                           MaterialPageRoute(
                                             //passing value of product details
                                             builder: (context) => Cart(
-                                                //
-                                                ),
+                                              product_details_Cameras: Test(),
+                                              //
+                                            ),
                                           ),
                                         );
                                       },
@@ -259,7 +261,7 @@ class _TestState extends State<Test> {
                     "Similar Products",
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   )),
-              Similar_Product(),
+              //  Similar_Product(),
             ],
           ),
         ),
@@ -384,7 +386,7 @@ class _TestState extends State<Test> {
   }
 }
 
-class Similar_Product extends StatefulWidget {
+  /*class Similar_Product extends StatefulWidget {
   @override
   _Similar_ProductState createState() => _Similar_ProductState();
 }
@@ -525,4 +527,4 @@ class Similar_Single_prod extends StatelessWidget {
       ),
     );
   }
-}
+}*/

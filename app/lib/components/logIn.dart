@@ -1,11 +1,13 @@
 //import 'dart:ffi';
 
 import 'package:app/components/progress.dart';
+import 'package:app/components/reset.dart';
 import 'package:app/model/login_model.dart';
 import 'package:flutter/material.dart';
 import 'package:app/components/homePage.dart';
 import 'package:app/components/test.dart';
 import 'package:app/api/login_api.dart';
+import 'package:app/components/reset.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({Key? key}) : super(key: key);
@@ -175,6 +177,18 @@ class _LogInState extends State<LogIn> {
                     )
                   ],
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      child: Text("Forget Password"),
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Reset()));
+                      },
+                    )
+                  ],
+                )
                 //   Container(
                 //   padding: EdgeInsets.only(top: 100),
                 //  height: 200,
